@@ -45,7 +45,8 @@ const Chart: React.FC = () => {
   });
 
   return (
-    <div>
+    <div className="mt-[100px] px-[130px]">
+      <h2 className="text-[26px] leading-[40px] font-bold mb-[20px]">Chart</h2>
       <div id="chart">
         <ReactApexChart
           options={state.options}

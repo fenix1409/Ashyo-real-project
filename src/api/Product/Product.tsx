@@ -38,7 +38,6 @@ export const useProducts = (page: number, limit: number = 100) => {
           params: { page: String(page), limit: String(limit) },
         }
       );
-      console.log(data.products);
       return data; // Butun API javobini qaytaramiz
     },
     enabled: page > 0, // Faqat musbat son bo'lsa so‘rov yuboriladi

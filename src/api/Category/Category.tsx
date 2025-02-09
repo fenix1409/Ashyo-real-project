@@ -31,7 +31,7 @@ export const CategoryList = () => {
           ))}
         </ul>
       ) : (
-        <p>Loadinf...</p>
+        <p>Loading...</p>
       )}
     </div>
   )

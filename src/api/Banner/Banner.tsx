@@ -17,7 +17,6 @@ const Banner: React.FC = () => {
     queryKey: ["banners"],
     queryFn: async () => {
       const response = await instance().get("/banner")
-      // console.log(response.data)
       return response.data
     }
   })
@@ -25,16 +24,19 @@ const Banner: React.FC = () => {
   if (isLoading) return <p>Yuklanmoqda...</p>
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
-      {data?.banners?.map((item: BannerType) => (
-        <div key={item.id} className="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
-          <Image src={`https://ashyo.store/${item.image}`} alt={`Banner ${item.name}`} width={310} height={169} className="w-full h-[200px] object-cover"/>
-          <div className="p-4">
-            <h1 className="text-lg font-semibold text-gray-900">{item.name}</h1>
-            <p className="text-gray-600 text-sm mt-2">{item.description}</p>
+    <div className="px-[130px] mt-[80px]">
+      <h2 className="text-[26px] leading-[40px] font-bold mb-[20px]">Banner</h2>
+      <div className="flex items-center gap-[30px]">
+        {data?.banners?.map((item: BannerType) => (
+          <div key={item.id} className="bg-white shadow-lg rounded-xl overflow-hidden transform hover:scale-105 transition duration-300">
+            {/* <Image src={`https://ashyo.store/${item.image}`} alt={`Banner ${item.name}`} width={310} height={169} className="w-full h-[200px] object-cover"/> */}
+            <div className="p-4">
+              <h1 className="text-lg font-semibold text-gray-900">{item.name}</h1>
+              <p className="text-gray-600 text-sm mt-2">{item.description}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   )
 }
