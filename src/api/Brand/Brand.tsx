@@ -3,33 +3,33 @@ import { useEffect, useState } from "react";
 import { instance } from "../../components/hook/instance";
 
 export interface BrandType {
-  id: number;
-  name: string;
-  image: string;
-  products: Product[];
+  id: number
+  name: string
+  image: string
+  products: Product[]
 }
 
 export interface Product {
-  id: number;
-  name: string;
-  description: string;
-  categoryId: number;
-  image: string;
-  brendId: number;
+  id: number
+  name: string
+  description: string
+  categoryId: number
+  image: string
+  brendId: number
 }
 
 export const BrandList = () => {
-  const [brandList, setBrandList] = useState<BrandType[]>([]);
+  const [brandList, setBrandList] = useState<BrandType[]>([])
 
   useEffect(() => {
     instance()
       .get("/brand")
       .then((res) => {
-          console.log(res.data.brands[0].products);
-        return setBrandList(res.data.brands);
+        console.log(res.data.brands[0].products)
+        return setBrandList(res.data.brands)
       })
-      .catch((err) => console.error("Error fetching categories:", err));
-  }, []);
+      .catch((err) => console.error("Error fetching categories:", err))
+  }, [])
 
   return (
     <div className="px-[130px] mt-[80px]">
@@ -43,8 +43,8 @@ export const BrandList = () => {
                 <ul>
                   {item.products.map((product) => (
                     <li key={product.id}>
-                        <h2 className="text-sm text-blue-400">{product.name}</h2>
-                        <p className="text-sm text-blue-600">{product.description}</p>
+                      <h2 className="text-sm text-blue-400">{product.name}</h2>
+                      <p className="text-sm text-blue-600">{product.description}</p>
                     </li>
                   ))}
                 </ul>
@@ -60,5 +60,5 @@ export const BrandList = () => {
         <p>Loading...</p>
       )}
     </div>
-  );
-};
+  )
+}

@@ -12,13 +12,13 @@ export const CategoryList = () => {
 
   useEffect(() => {
     instance().get("/category?page=1&limit=100").then((res) => {
-        setCategoryList(
-          res.data.categories.map((item: CategoryType) => ({
-            id: item.id,
-            name: item.name
-          }))
-        )
-      })
+      setCategoryList(
+        res.data.categories.map((item: CategoryType) => ({
+          id: item.id,
+          name: item.name
+        }))
+      )
+    })
       .catch((err) => console.error("Error fetching categories:", err))
   }, [])
 

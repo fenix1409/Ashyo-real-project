@@ -8,11 +8,11 @@ import { BrandList } from '@/src/api/Brand/Brand'
 const Carousel = () => {
   return (
     <div>
-        <section><Hero/></section>
-        <section><Banner/></section>
-        <section><ProductCart/></section>
-        <section><BrandList/></section>
-        <div><Chart/></div>
+      <section><Hero /></section>
+      <section><Banner /></section>
+      <section><ProductCart /></section>
+      <section><BrandList /></section>
+      <div><Chart /></div>
     </div>
   )
 }
